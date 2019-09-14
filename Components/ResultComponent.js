@@ -52,7 +52,9 @@ class ResultComponent extends React.Component{
   render(){
     return(
       <React.Fragment>
-      <Table columns={columns} dataSource={this.state.searchResult} />
+      <Table columns={columns}
+      bordered
+       dataSource={this.state.searchResult} />
       </React.Fragment>
     );
   }
