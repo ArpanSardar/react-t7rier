@@ -55,7 +55,7 @@ onChangeSourceHandler=val=>{
       ) : null}
       <table className='tblSearchComponent'>
       <tr>
-      <td>Source City:
+      <td>Source City:<span style={{color:'red', marginLeft:10, fontSize:20}}>*</span>
       <br/>
       <AutoComplete
         dataSource={city}
@@ -66,7 +66,7 @@ onChangeSourceHandler=val=>{
         allowClear={true}
       />
       </td>
-      <td>Destination City:
+      <td>Destination City:<span style={{color:'red', marginLeft:10, fontSize:20}}>*</span>
       <br/>
       <AutoComplete
         dataSource={city}
@@ -85,7 +85,7 @@ onChangeSourceHandler=val=>{
       </td>
       </tr>
       <tr>
-      <td>Travel Date:<br/>
+      <td>Travel Date:<span style={{color:'red', marginLeft:10, fontSize:20}}>*</span><br/>
       <DatePicker 
       name='travelDate'
       onChange={(date,dateString)=>this.onchangeHandler(dateString,'travelDate')} />
