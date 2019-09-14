@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {getFlightDetails} from '../Actions/flightActions'
 import {city} from '../AutoCompleteData/data'
-import {  Icon, Input, Button, AutoComplete,DatePicker} from 'antd';
+import {  Icon, Input, Button, AutoComplete,DatePicker, Alert} from 'antd';
 import 'antd/dist/antd.css';
 
 import '../style.css'
@@ -45,6 +45,9 @@ onChangeSourceHandler=val=>{
     return(
       <React.Fragment>
       <div className='container'>
+      {this.props.error.error ? (
+        <Alert message={this.props.error.error} type="error" />
+      ) : null}
       <table className='tblSearchComponent'>
       <tr>
       <td>Source City:
@@ -99,7 +102,8 @@ onChangeSourceHandler=val=>{
 // export default SearchComponent;
 
 const mapStateToProps = state => ({
-  flights: state.flights.flights
+  flights: state.flights.flights,
+  error: state.error
 });
 
 export default connect(
