@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {getFlightDetails} from '../Actions/flightActions'
 import {city} from '../AutoCompleteData/data'
-import {  Icon, Input, Button, AutoComplete,DatePicker, Alert} from 'antd';
+import {  Icon, Input, Button, AutoComplete,DatePicker, Alert,message} from 'antd';
 import 'antd/dist/antd.css';
 
 import '../style.css'
@@ -20,6 +20,7 @@ class SearchComponent extends React.Component{
 
   searchFlight=()=>{
     // if(this.validateRequiredFields()){
+      if(this.state.sourceCity && this.state.desticationCity && this.state.travelDate){
     var _searchObject={
       sourceCity= this.state.sourceCity,
       destinationCity= this.state.destinationCity,
@@ -28,6 +29,10 @@ class SearchComponent extends React.Component{
     }
 
     this.props.getFlightDetails(_searchObject);
+      }
+      else{
+        message.warning('Please provide all the mandatory fields');
+      }
     // }
   }
 
