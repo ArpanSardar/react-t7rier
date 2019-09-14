@@ -5,9 +5,11 @@ h1, p {
   max-width: 850px;
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
-  margin-top: 4rem;
-  margin-bottom: 3rem;
+  padding: 20px 20px;
+
+  background-color: #343a40;
+  color: #fff;
+   
 }
 
 .tblSearchComponent{
