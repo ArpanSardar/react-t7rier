@@ -1,8 +1,13 @@
 h1, p {
   font-family: Lato;
 }
-.container{
+.container {
+  max-width: 850px;
   margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 .tblSearchComponent{

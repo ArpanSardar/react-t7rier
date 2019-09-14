@@ -7,7 +7,9 @@ import SignIn from './Components/SignIn';
 function App() {
   return (
     <Provider store={store}>
+    <div className='container'>
       <Home/>
+    </div>
     </Provider>
   );
 }
